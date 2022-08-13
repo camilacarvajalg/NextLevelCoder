@@ -1,12 +1,14 @@
-from unittest.mock import DEFAULT
+#from unittest.mock import DEFAULT
 import pygame
-from dino_runner.utils.constants import DEFAULT_TYPE, DUCKING_SHIELD, JUMPING_SHIELD, RUNNING, DUCKING, JUMPING, RUNNING_SHIELD, SHIELD_TYPE 
+pygame.mixer.init()
+from dino_runner.utils.constants import DEFAULT_TYPE, DUCKING_SHIELD, JUMPING_SHIELD, RUNNING, DUCKING, JUMPING, RUNNING_SHIELD, SHIELD_TYPE, JUMPING_HAMMER, RUNNING_HAMMER
 from pygame.sprite import Sprite
+
 class Dinosaur(Sprite):
-    X_POS = 80
+    X_POS = 600
     Y_POS = 310
     Y_POS_DUCK = 340
-    JUMP_VEL = 8.5
+    JUMP_VEL = 11
 
     def __init__(self):
         self.duck_image = {DEFAULT_TYPE: DUCKING, SHIELD_TYPE: DUCKING_SHIELD}
@@ -41,6 +43,7 @@ class Dinosaur(Sprite):
             self.dino_run = False
             self.dino_duck = True
             self.dino_jump = False
+
         elif user_input[pygame.K_UP] and not self.dino_jump:
             self.dino_run = False
             self.dino_duck = False
@@ -68,8 +71,8 @@ class Dinosaur(Sprite):
         #self.image = JUMPING
         self.image = self.jump_image[self.type]
         if self.dino_jump:
-            self.dino_rect.y -= self.jump_vel * 4
-            self.jump_vel -= 0.8
+            self.dino_rect.y -= self.jump_vel * 5
+            self.jump_vel -= 1
         if self.jump_vel < -self.JUMP_VEL:
             self.dino_rect.y = self.Y_POS
             self.dino_jump = False
@@ -102,4 +105,10 @@ class Dinosaur(Sprite):
     def update_to_default(self, current_type):
         if self.type == current_type:
             self.type = DEFAULT_TYPE
+
+
+
+
+
+
 

@@ -2,9 +2,9 @@ import pygame
 import os
 
 # Global Constants
-TITLE = "Chrome Dino Runner"
-SCREEN_HEIGHT = 600
-SCREEN_WIDTH = 1100
+TITLE = "Chrome Dino Runner by Camila Carvajal"
+SCREEN_HEIGHT = 900
+SCREEN_WIDTH = 1400
 FPS = 30
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
@@ -48,20 +48,26 @@ DUCKING_HAMMER = [
 SMALL_CACTUS = [
     pygame.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus1.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus2.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus3.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus3.png"))
 ]
 LARGE_CACTUS = [
     pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus1.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus2.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus3.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Cactus/LargeCactus3.png"))
 ]
 
 BIRD = [
     pygame.image.load(os.path.join(IMG_DIR, "Bird/Bird1.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Bird/Bird2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Bird/Bird3.jpg"))
 ]
 
-CLOUD = pygame.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png'))
+CLOUD = [
+    pygame.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png')),
+    pygame.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png')),
+    pygame.image.load(os.path.join(IMG_DIR, 'Other/CloudSun.jpg'))
+]
+
 SHIELD = pygame.image.load(os.path.join(IMG_DIR, 'Other/shield.png'))
 HAMMER = pygame.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
 
@@ -71,3 +77,4 @@ HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
 DEFAULT_TYPE = "default"
 SHIELD_TYPE = "shield"
+
